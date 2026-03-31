@@ -1,0 +1,162 @@
+/* --- Reset & Font Global --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1a2e; /* Biru sangat tua (Hampir Hitam) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Container Utama --- */
+.container {
+    background-color: #16213e; /* Biru gelap */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Bayangan lembut agar 'mengambang' */
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    border: 1px solid #1a1a2e;
+}
+
+/* --- Judul --- */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #00d2fc; /* Warna cyan cerah */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 210, 252, 0.5);
+}
+
+/* --- Area Tampilan Teks (Quote) --- */
+.quote-display {
+    background-color: #0f3460; /* Biru medium untuk kontras */
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #b0b0b0; /* Warna teks default agak redup */
+    min-height: 120px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* Indikasi saat input aktif, area teks ikut 'menyala' */
+.container:focus-within .quote-display {
+    border-color: #00d2fc;
+}
+
+/* --- Styling Karakter (Correct/Incorrect) --- */
+/* Karakter yang belum diketik tetap #b0b0b0 */
+
+.correct {
+    color: #00ff88; /* Hijau neon cerah */
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+.incorrect {
+    color: #ff4757; /* Merah cerah */
+    background-color: rgba(255, 71, 87, 0.2); /* Highlight latar merah tipis */
+    border-radius: 2px;
+    text-decoration: none; /* Hapus underline agar tidak terlalu kotor */
+}
+
+/* --- Area Input (Textarea) --- */
+.quote-input {
+    width: 100%;
+    height: 90px;
+    padding: 15px;
+    font-size: 1.1rem;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    border: 2px solid #0f3460;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    resize: none; /* Matikan fitur resize manual user */
+    font-family: inherit;
+}
+
+.quote-input:focus {
+    border-color: #00d2fc;
+    box-shadow: 0 0 15px rgba(0, 210, 252, 0.3);
+}
+
+.quote-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #16213e;
+}
+
+/* --- Panel Statistik --- */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+    padding: 15px;
+    background-color: rgba(15, 52, 96, 0.5);
+    border-radius: 10px;
+}
+
+.stats div {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+}
+
+.stats span {
+    display: block; /* Taruh angka di bawah label */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+/* Beri warna khusus untuk angka WPM */
+#wpm {
+    color: #e94560; /* Merah muda/Pink cerah */
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+/* --- Tombol Mulai --- */
+#start-btn {
+    background: linear-gradient(45deg, #e94560, #95389e); /* Gradien warna */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+}
+
+#start-btn:hover {
+    transform: translateY(-3px); /* Efek terangkat saat hover */
+    box-shadow: 0 8px 20px rgba(233, 69, 96, 0.5);
+}
+
+#start-btn:active {
+    transform: translateY(-1px);
+}
+
+#start-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    opacity: 0.6;
+}
